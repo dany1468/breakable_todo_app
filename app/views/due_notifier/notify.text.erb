@@ -1,5 +1,4 @@
 DueNotifier#notify
 
-こんにちは
 <%= @task.title %>
-<%= @task.due_date %>
+<%= @task.due_date.strftime('%Y/%m/%d') %>
