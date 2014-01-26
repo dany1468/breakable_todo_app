@@ -41,6 +41,10 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
+group :test do
+  gem 'timecop'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
