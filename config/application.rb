@@ -8,6 +8,7 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
+require_relative '../lib/rack/disable_mobile_auto_link'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -26,5 +27,7 @@ module TodoApp
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    config.middleware.use Rack::DisableMobileAutoLink, %w(telephone email)
   end
 end
